@@ -5,14 +5,14 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	MIME
 %define	pnam	Base32
-Summary:	MIME::Base32 - Base32 encoder / decoder
-Summary(pl.UTF-8): MIME::Base32 - Base32 koder / dekoder
+Summary:	MIME::Base32 - Base32 encoder/decoder
+Summary(pl.UTF-8): MIME::Base32 - koder/dekoder Base32
 Name:		perl-MIME-Base32
 Version:	1.01
 Release:	1
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://search.cpan.org/CPAN/authors/id/D/DA/DANPEDER/%{pdir}-%{pnam}-%{version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/MIME/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	2e0a1df2a73dcee749c225774cac52e7
 URL:		http://search.cpan.org/dist/MIME-Base32/
 BuildRequires:	perl-devel >= 1:5.8.0
@@ -28,7 +28,12 @@ typed-or-submitted by user. It is upper/lowercase safe (not
 sensitive).
 
 %description -l pl.UTF-8
-MIME::Base32 - Base32 koder / dekoder
+Ten moduł koduje dane w sposób podobny do MIME::Base64.
+
+Głównym zastosowaniem jest tworzenie zaszyfrowanego tekstu używanego
+jako identyfikator lub klucz wpisywany lub przekazywany przez
+użytkownika. Jest bezpieczny ze względu na wielkość liter (nie są one
+rozróżniane).
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
@@ -52,5 +57,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README
-%{perl_vendorlib}/MIME/*.pm
-%{_mandir}/man3/*
+%{perl_vendorlib}/MIME/Base32.pm
+%{_mandir}/man3/MIME::Base32.3pm*
