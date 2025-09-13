@@ -1,6 +1,6 @@
 #
 # Conditional build:
-%bcond_without	tests		# do not perform "make test"
+%bcond_without	tests		# unit tests
 #
 %define	pdir	MIME
 %define	pnam	Base32
@@ -11,11 +11,12 @@ Version:	1.303
 Release:	1
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/MIME/%{pdir}-%{pnam}-%{version}.tar.gz
+Source0:	https://www.cpan.org/modules/by-module/MIME/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	0c7735fa09e74c7f2ec93d1890b8c6c0
-URL:		http://search.cpan.org/dist/MIME-Base32/
+URL:		https://metacpan.org/dist/MIME-Base32
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
+BuildRequires:	rpmbuild(macros) >= 1.745
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -55,6 +56,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README.md
+%doc Changes README.md
 %{perl_vendorlib}/MIME/Base32.pm
 %{_mandir}/man3/MIME::Base32.3pm*
