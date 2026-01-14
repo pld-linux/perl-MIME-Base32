@@ -8,7 +8,7 @@ Summary:	MIME::Base32 - Base32 encoder/decoder
 Summary(pl.UTF-8): MIME::Base32 - koder/dekoder Base32
 Name:		perl-MIME-Base32
 Version:	1.303
-Release:	1
+Release:	2
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	https://www.cpan.org/modules/by-module/MIME/%{pdir}-%{pnam}-%{version}.tar.gz
